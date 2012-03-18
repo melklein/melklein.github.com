@@ -1,48 +1,47 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
 
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta http-equiv="content-language" content="en" />
 
-<link href="jquery.zrssfeed.css" rel="stylesheet" type="text/css" />
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script src="jquery.zrssfeed.min.js" type="text/javascript"></script>
 
-<title>zRSSFeed - Basic RSS Feed Example</title>
+<style type="text/css">
+  body {background-image:url('http://subtlepatterns.com/patterns/concrete_wall_3.png');}
+</style>
+
+<title>melklein.io</title>
 </head>
 <body>
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <div class="page-header">
+          <h1>La Collectionneuse
+            <small>My collection of things from the internets</small>
+          </h1>
+        </div>
+        
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#all_i_learned').rssfeed('http://stuffilearned.melklein.io/rss', {limit: 5});
+                $('#journey_to_js').rssfeed('http://journeytojs.tumblr.com/rss', {limit: 5});
+                $('#arduino_me').rssfeed('http://arduinome.tumblr.com/rss', {limit: 5});
+                });
+        </script>
 
-<h1>zRSSFeed - Basic RSS Feed Example</h1>
-<p>Simple as it gets, this example uses the same code as in the documentation.</p>
+        <div id="arduino_me" class="well"></div>
+        <div id="journey_to_js" class="well"></div>
+        <div id="all_i_learned" class="well"></div>
 
-<script type="text/javascript">
-$(document).ready(function () {
-	$('#test').rssfeed('http://stuffilearned.melklein.io/rss', {
-		limit: 5
-	});
-});
-</script>
-
-<script type="text/javascript">
-$(document).ready(function () {
-	$('#test1').rssfeed('http://arduinome.tumblr.com/rss', {
-		limit: 5
-	});
-});
-</script>
-
-<script type="text/javascript">
-$(document).ready(function () {
-	$('#test2').rssfeed('http://journeytojs.tumblr.com/rss', {
-		limit: 5
-	});
-});
-</script>
-<div id="test"></div>
-<div id="test1"></div>
-<div id="test2"></div>
-
+        <footer class="footer">Powered by <a href="http://www.zazar.net/developers/jquery/zrssfeed/" target="blank" >zRSSFeed</a></footer>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
